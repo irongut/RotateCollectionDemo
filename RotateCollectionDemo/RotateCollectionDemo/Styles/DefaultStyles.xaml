@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary  xmlns="http://xamarin.com/schemas/2014/forms"
+					 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					 xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+					 xmlns:m="clr-namespace:RotateCollectionDemo.Models"
+					 x:Class="RotateCollectionDemo.Styles.DefaultStyles">
+
+	<!-- Nord Dark Theme -->
+	<Color x:Key="brandColor">#5E81AC</Color>
+	<Color x:Key="pageBackgroundColor">#2E3440</Color>
+	<Color x:Key="pageForegroundColor">#434C5E</Color>
+	<Color x:Key="textColor">#D8DEE9</Color>
+	<Color x:Key="strongTextColor">#ECEFF4</Color>
+	<Color x:Key="altTextColor">White</Color>
+	<Color x:Key="disabledTextColor">#E5E9F0</Color>
+	<Color x:Key="messageBackgroundColor">#81A1C1</Color>
+	<Color x:Key="messageTextColor">#D8DEE9</Color>
+
+	<!-- Styles -->
+
+	<Style TargetType="Label">
+		<Setter Property="TextColor" Value="{DynamicResource textColor}"/>
+	</Style>
+
+	<Style x:Key="rightBannerStyle" TargetType="Label">
+		<Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+		<Setter Property="HorizontalTextAlignment" Value="End"/>
+		<Setter Property="TextColor" Value="{StaticResource altTextColor}"/>
+		<Setter Property="Margin" Value="10, 0"/>
+	</Style>
+
+	<Style x:Key="headerText" TargetType="StackLayout">
+		<Setter Property="Spacing" Value="5"/>
+		<Setter Property="Margin" Value="10, 10"/>
+	</Style>
+
+	<DataTemplate x:Key="portTemplate"
+				  x:DataType="m:DataItem">
+		<Frame BackgroundColor="{StaticResource pageForegroundColor}"
+			   BorderColor="{StaticResource brandColor}"
+			   CornerRadius="5"
+			   Padding="10">
+
+			<Grid ColumnDefinitions="70, *, 70"
+				  RowDefinitions="*, Auto, Auto"
+				  ColumnSpacing="10"
+				  RowSpacing="0"
+				  HorizontalOptions="Fill">
+
+				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+									  Source="{Binding FirstImage, Mode=OneTime}"
+									  HeightRequest="70"
+									  VerticalOptions="Center"/>
+
+				<Label Grid.Row="0" Grid.Column="1"
+					   Text="{Binding Name, Mode=OneTime}"
+					   TextColor="{DynamicResource strongTextColor}"
+					   FontAttributes="Bold"
+					   FontSize="Large"
+					   LineBreakMode="WordWrap"
+					   MaxLines="2"/>
+
+				<Label Grid.Row="1" Grid.Column="1"
+					   Text="{Binding FirstLine, Mode=OneTime}"
+					   LineBreakMode="NoWrap"/>
+
+				<Label Grid.Row="2" Grid.Column="1"
+					   Text="{Binding SecondLine, Mode=OneTime}"
+					   LineBreakMode="NoWrap"/>
+
+				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"
+									  Source="{Binding SecondImage, Mode=OneTime}"
+									  HeightRequest="70"
+									  VerticalOptions="Center"/>
+				
+			</Grid>
+		
+		</Frame>
+	</DataTemplate>
+	
+</ResourceDictionary>

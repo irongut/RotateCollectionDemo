@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_zombie_background">#2E3440</color>
+    <color name="launcher_background">#2E3440</color>
+    <color name="brand">#5E81AC</color>
+</resources>
