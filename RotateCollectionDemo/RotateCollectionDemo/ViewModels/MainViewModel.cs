@@ -21,7 +21,7 @@ namespace RotateCollectionDemo.ViewModels
         private void GenerateData()
         {
             Data.Clear();
-            for (int i = 0; i < _random.Next(5, 9); i++)
+            for (int i = 0; i < _random.Next(6, 10); i++)
             {
                 DataItem item = new DataItem();
                 if (_random.Next(2) < 1)
