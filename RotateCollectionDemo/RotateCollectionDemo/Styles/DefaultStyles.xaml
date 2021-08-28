@@ -13,9 +13,6 @@
 	<Color x:Key="textColor">#D8DEE9</Color>
 	<Color x:Key="strongTextColor">#ECEFF4</Color>
 	<Color x:Key="altTextColor">White</Color>
-	<Color x:Key="disabledTextColor">#E5E9F0</Color>
-	<Color x:Key="messageBackgroundColor">#81A1C1</Color>
-	<Color x:Key="messageTextColor">#D8DEE9</Color>
 
 	<!-- Styles -->
 
