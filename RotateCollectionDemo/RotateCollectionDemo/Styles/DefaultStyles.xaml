@@ -34,25 +34,23 @@
 
 	<DataTemplate x:Key="portTemplate"
 				  x:DataType="m:DataItem">
-		<ContentView BackgroundColor="Transparent"
-					 Padding="0, 8">
-			<Frame BackgroundColor="{StaticResource pageForegroundColor}"
+		<Frame BackgroundColor="{StaticResource pageForegroundColor}"
 			   BorderColor="{StaticResource brandColor}"
 			   CornerRadius="5"
 			   Padding="10">
 
-				<Grid ColumnDefinitions="70, *, 70"
+			<Grid ColumnDefinitions="70, *, 70"
 				  RowDefinitions="*, Auto, Auto"
 				  ColumnSpacing="10"
 				  RowSpacing="0"
 				  HorizontalOptions="Fill">
 
-					<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
 									  Source="{Binding FirstImage, Mode=OneTime}"
 									  HeightRequest="70"
 									  VerticalOptions="Center"/>
 
-					<Label Grid.Row="0" Grid.Column="1"
+				<Label Grid.Row="0" Grid.Column="1"
 					   Text="{Binding Name, Mode=OneTime}"
 					   TextColor="{DynamicResource strongTextColor}"
 					   FontAttributes="Bold"
@@ -60,23 +58,22 @@
 					   LineBreakMode="WordWrap"
 					   MaxLines="2"/>
 
-					<Label Grid.Row="1" Grid.Column="1"
+				<Label Grid.Row="1" Grid.Column="1"
 					   Text="{Binding FirstLine, Mode=OneTime}"
 					   LineBreakMode="NoWrap"/>
 
-					<Label Grid.Row="2" Grid.Column="1"
+				<Label Grid.Row="2" Grid.Column="1"
 					   Text="{Binding SecondLine, Mode=OneTime}"
 					   LineBreakMode="NoWrap"/>
 
-					<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"
+				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"
 									  Source="{Binding SecondImage, Mode=OneTime}"
 									  HeightRequest="70"
 									  VerticalOptions="Center"/>
-
-				</Grid>
-
-			</Frame>
-		</ContentView>
+				
+			</Grid>
+		
+		</Frame>
 	</DataTemplate>
-	
+
 </ResourceDictionary>
