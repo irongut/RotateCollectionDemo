@@ -1,37 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:RotateCollectionDemo.ViewModels"
-			 x:Class="RotateCollectionDemo.MainPage"
-			 x:DataType="vm:MainViewModel"
-			 BackgroundColor="{DynamicResource pageBackgroundColor}">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RotateCollectionDemo.ViewModels"
+             x:Class="RotateCollectionDemo.MainPage"
+             x:DataType="vm:MainViewModel"
+             BackgroundColor="{DynamicResource pageBackgroundColor}">
 
-	<StackLayout Spacing="5"
-				 VerticalOptions="FillAndExpand">
+    <StackLayout Spacing="5"
+                 VerticalOptions="FillAndExpand">
 
-		<StackLayout Orientation="Vertical"
-					 Style="{StaticResource headerText}">
-			<Label Text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?"
-				   TextColor="{DynamicResource textColor}"/>
-			<Label Text="Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams."
-				   TextColor="{DynamicResource textColor}"/>
-			<Label Text="Icons made by Freepik from FlatIcon (https://www.flaticon.com)."
-				   TextColor="{DynamicResource textColor}"/>
-		</StackLayout>
+        <StackLayout Orientation="Vertical"
+                     Style="{StaticResource headerText}">
+            <Label Text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?"
+                   TextColor="{DynamicResource textColor}"/>
+            <Label Text="Icons made by Freepik from FlatIcon (www.flaticon.com)."
+                   TextColor="{DynamicResource strongTextColor}"/>
+        </StackLayout>
 
-		<CollectionView ItemTemplate="{StaticResource portTemplate}"
-						ItemsSource="{Binding Data, Mode=OneWay}"
-						ItemSizingStrategy="MeasureFirstItem"
-						Margin="10, 0"
-						VerticalOptions="FillAndExpand"/>
+        <CollectionView ItemTemplate="{StaticResource portTemplate}"
+                        ItemsSource="{Binding Data, Mode=OneWay}"
+                        ItemSizingStrategy="MeasureFirstItem"
+                        Margin="10, 0"
+                        VerticalOptions="FillAndExpand"/>
 
-		<StackLayout Orientation="Horizontal"
+        <StackLayout Orientation="Horizontal"
                      Spacing="10"
                      BackgroundColor="{StaticResource brandColor}">
-			<Label Text="{Binding LastUpdated, StringFormat='Updated: {0}', Mode=OneWay}" 
+            <Label Text="{Binding LastUpdated, StringFormat='Updated: {0}', Mode=OneWay}" 
                    Style="{StaticResource rightBannerStyle}"/>
-		</StackLayout>
-		
-	</StackLayout>
+        </StackLayout>
+        
+    </StackLayout>
 
 </ContentPage>
