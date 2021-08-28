@@ -76,4 +76,54 @@
 		</Frame>
 	</DataTemplate>
 
+	<DataTemplate x:Key="landTemplate"
+				  x:DataType="m:DataItem">
+		<Frame BackgroundColor="{StaticResource pageForegroundColor}"
+			   BorderColor="{StaticResource brandColor}"
+			   CornerRadius="5"
+			   Padding="10">
+
+			<Grid ColumnDefinitions="50, 190"
+				  RowDefinitions="50, 50"
+				  ColumnSpacing="10"
+				  RowSpacing="5"
+				  HorizontalOptions="Fill">
+
+				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="0"
+									  Source="{Binding FirstImage, Mode=OneTime}"
+									  HeightRequest="50"
+									  VerticalOptions="Center"/>
+
+				<ffsvg:SvgCachedImage Grid.Row="1" Grid.Column="0"
+									  Source="{Binding SecondImage, Mode=OneTime}"
+									  HeightRequest="50"
+									  VerticalOptions="Center"/>
+
+				<Label Grid.Row="0" Grid.Column="1"
+					   Text="{Binding Name, Mode=OneTime}"
+					   TextColor="{DynamicResource strongTextColor}"
+					   FontAttributes="Bold"
+					   FontSize="Large"
+					   LineBreakMode="WordWrap"
+					   MaxLines="2"
+					   VerticalOptions="Center"/>
+
+				<StackLayout Grid.Row="1" Grid.Column="1"
+							 Orientation="Vertical"
+							 Spacing="0"
+							 VerticalOptions="Center">
+
+					<Label Text="{Binding FirstLine, Mode=OneTime}"
+						   LineBreakMode="NoWrap"/>
+
+					<Label Text="{Binding SecondLine, Mode=OneTime}"
+						   LineBreakMode="NoWrap"/>
+
+				</StackLayout>
+
+			</Grid>
+
+		</Frame>
+	</DataTemplate>
+
 </ResourceDictionary>
