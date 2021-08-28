@@ -1,16 +1,25 @@
 ﻿using RotateCollectionDemo.Models;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace RotateCollectionDemo.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         private readonly Random _random = new Random();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<DataItem> Data { get; }
 
         public DateTime LastUpdated => DateTime.Now;
+
+        private DataTemplate collectionTemplate;
+        public DataTemplate CollectionTemplate { get => collectionTemplate; set => SetProperty(ref collectionTemplate, value); }
 
         public MainViewModel()
         {
@@ -42,6 +51,45 @@ namespace RotateCollectionDemo.ViewModels
                     ? "resource://RotateCollectionDemo.Resources.zombie.hand.svg"
                     : "resource://RotateCollectionDemo.Resources.pumpkin.svg";
                 Data.Add(item);
+            }
+        }
+
+        protected bool SetProperty<T>(ref T field, T newValue, [CallerMemberName] string propertyName = null)
+        {
+            if (!Equals(field, newValue))
+            {
+                field = newValue;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                return true;
+            }
+
+            return false;
+        }
+
+        public void OnAppearing()
+        {
+            MessagingCenter.Subscribe<App>(this, "AppOnResume", (_) => SetLayout());
+        }
+
+        public virtual void OnDisappearing()
+        {
+            MessagingCenter.Unsubscribe<App>(this, "AppOnResume");
+        }
+
+        public void SetLayout()
+        {
+            var displayInfo = DeviceDisplay.MainDisplayInfo;
+            if (displayInfo.Width > displayInfo.Height)
+            {
+                CollectionTemplate = App.Current.Resources.TryGetValue("landTemplate", out object value)
+                    ? (DataTemplate)value
+                    : throw new Exception("landTemplate not found!");
+            }
+            else
+            {
+                CollectionTemplate = App.Current.Resources.TryGetValue("portTemplate", out object value)
+                    ? (DataTemplate)value
+                    : throw new Exception("portTemplate not found!");
             }
         }
     }

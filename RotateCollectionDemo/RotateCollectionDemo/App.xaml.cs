@@ -29,6 +29,7 @@ namespace RotateCollectionDemo
 
         protected override void OnResume()
         {
+            MessagingCenter.Send(this, "AppOnResume");
         }
     }
 }

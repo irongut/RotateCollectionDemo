@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:RotateCollectionDemo.ViewModels"
              x:Class="RotateCollectionDemo.MainPage"
              x:DataType="vm:MainViewModel"
+             Title="Rotate Collection Demo"
              BackgroundColor="{DynamicResource pageBackgroundColor}">
 
     <StackLayout Spacing="5"
@@ -23,7 +24,7 @@
             
         </StackLayout>
 
-        <CollectionView ItemTemplate="{StaticResource portTemplate}"
+        <CollectionView ItemTemplate="{Binding CollectionTemplate, Mode=OneWay}"
                         ItemsSource="{Binding Data, Mode=OneWay}"
                         ItemSizingStrategy="MeasureFirstItem"
                         Margin="10, 5">
