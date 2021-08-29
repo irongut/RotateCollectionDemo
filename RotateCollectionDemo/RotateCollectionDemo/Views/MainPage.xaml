@@ -10,14 +10,23 @@
     <StackLayout Spacing="5"
                  VerticalOptions="FillAndExpand">
 
+        <ContentView BackgroundColor="{StaticResource brandColor}"
+                     Padding="10, 20">
+
+            <Label Text="Rotate Collection Demo"
+                   TextColor="{StaticResource altTextColor}"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+        </ContentView>
+
         <StackLayout Orientation="Vertical"
                      Style="{StaticResource headerText}">
             
-            <Label Text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?"
-                   TextColor="{DynamicResource textColor}"/>
+            <Label Text="Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?"/>
             
-            <Label Text="Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams."
-                   TextColor="{DynamicResource textColor}"/>
+            <Label Text="Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams."/>
             
             <Label Text="Icons made by Freepik from FlatIcon (www.flaticon.com)."
                    TextColor="{DynamicResource strongTextColor}"/>
