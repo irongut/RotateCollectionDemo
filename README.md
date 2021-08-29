@@ -10,7 +10,7 @@
 
 </div>
 
-Demonstrates changing a CollectionView based on device orientation in Xamarin Forms.
+Demonstrates changing a Xamarin Forms CollectionView from a vertical list to a horizontal list based on device orientation.
 
 ## Notes
 
@@ -24,13 +24,9 @@ Use a binding on `CollectionView.ItemLayout` to specify different layouts / orie
 
 ## Screenshots
 
-Portrait
---------
-![Portrait Screenshot](rcd_portrait.png)
-
-Landscape
----------
-![Landscape Screenshot](rcd_landscape.png)
+Portrait | Landscape
+-------- | ---------
+![Portrait Screenshot](rcd_portrait.png) | ![Landscape Screenshot](rcd_landscape.png)
 
 &nbsp;
 
