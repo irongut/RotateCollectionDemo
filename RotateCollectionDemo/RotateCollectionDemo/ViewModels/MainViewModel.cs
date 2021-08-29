@@ -12,6 +12,16 @@ namespace RotateCollectionDemo.ViewModels
     {
         private readonly Random _random = new Random();
 
+        private readonly ItemsLayout portLayout = new LinearItemsLayout(ItemsLayoutOrientation.Vertical)
+        {
+            ItemSpacing = 15
+        };
+
+        private readonly ItemsLayout landLayout = new LinearItemsLayout(ItemsLayoutOrientation.Horizontal)
+        {
+            ItemSpacing = 15
+        };
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<DataItem> Data { get; }
@@ -20,6 +30,9 @@ namespace RotateCollectionDemo.ViewModels
 
         private DataTemplate collectionTemplate;
         public DataTemplate CollectionTemplate { get => collectionTemplate; set => SetProperty(ref collectionTemplate, value); }
+
+        private ItemsLayout collectionLayout;
+        public ItemsLayout CollectionLayout { get => collectionLayout; set => SetProperty(ref collectionLayout, value); }
 
         public MainViewModel()
         {
@@ -78,18 +91,22 @@ namespace RotateCollectionDemo.ViewModels
 
         public void SetLayout()
         {
-            var displayInfo = DeviceDisplay.MainDisplayInfo;
+            DisplayInfo displayInfo = DeviceDisplay.MainDisplayInfo;
             if (displayInfo.Width > displayInfo.Height)
             {
+                // landscape
                 CollectionTemplate = App.Current.Resources.TryGetValue("landTemplate", out object value)
                     ? (DataTemplate)value
                     : throw new Exception("landTemplate not found!");
+                CollectionLayout = landLayout;
             }
             else
             {
+                // portrait
                 CollectionTemplate = App.Current.Resources.TryGetValue("portTemplate", out object value)
                     ? (DataTemplate)value
                     : throw new Exception("portTemplate not found!");
+                CollectionLayout = portLayout;
             }
         }
     }

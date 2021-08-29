@@ -24,15 +24,11 @@
             
         </StackLayout>
 
-        <CollectionView ItemTemplate="{Binding CollectionTemplate, Mode=OneWay}"
-                        ItemsSource="{Binding Data, Mode=OneWay}"
+        <CollectionView ItemsSource="{Binding Data, Mode=OneWay}"
+                        ItemTemplate="{Binding CollectionTemplate, Mode=OneWay}"
+                        ItemsLayout="{Binding CollectionLayout, Mode=OneWay}"
                         ItemSizingStrategy="MeasureFirstItem"
-                        Margin="10, 5">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="15"/>
-            </CollectionView.ItemsLayout>
-        </CollectionView>
+                        Margin="10, 5"/>
 
         <StackLayout Orientation="Horizontal"
                      Spacing="10"
