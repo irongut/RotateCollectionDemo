@@ -10,7 +10,7 @@ namespace RotateCollectionDemo.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private readonly Random _random = new Random();
+        private readonly Random random = new Random();
 
         private readonly ItemsLayout portLayout = new LinearItemsLayout(ItemsLayoutOrientation.Vertical)
         {
@@ -43,10 +43,10 @@ namespace RotateCollectionDemo.ViewModels
         private void GenerateData()
         {
             Data.Clear();
-            for (int i = 0; i < _random.Next(6, 10); i++)
+            for (int i = 0; i < random.Next(6, 10); i++)
             {
                 DataItem item = new DataItem();
-                if (_random.Next(2) < 1)
+                if (random.Next(2) < 1)
                 {
                     item.Name = "Zombie Boy";
                     item.FirstLine = "Pestilentia est plague haec";
@@ -60,7 +60,7 @@ namespace RotateCollectionDemo.ViewModels
                     item.SecondLine = "Apathetic malus voodoo";
                     item.FirstImage = "resource://RotateCollectionDemo.Resources.zombie.girl.svg";
                 }
-                item.SecondImage = _random.Next(2) < 1
+                item.SecondImage = random.Next(2) < 1
                     ? "resource://RotateCollectionDemo.Resources.zombie.hand.svg"
                     : "resource://RotateCollectionDemo.Resources.pumpkin.svg";
                 Data.Add(item);

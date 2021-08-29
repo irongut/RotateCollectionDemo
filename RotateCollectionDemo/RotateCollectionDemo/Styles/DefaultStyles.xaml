@@ -7,6 +7,7 @@
 					 x:Class="RotateCollectionDemo.Styles.DefaultStyles">
 
 	<!-- Nord Dark Theme -->
+	
 	<Color x:Key="brandColor">#5E81AC</Color>
 	<Color x:Key="pageBackgroundColor">#2E3440</Color>
 	<Color x:Key="pageForegroundColor">#434C5E</Color>
@@ -29,8 +30,10 @@
 
 	<Style x:Key="headerText" TargetType="StackLayout">
 		<Setter Property="Spacing" Value="5"/>
-		<Setter Property="Margin" Value="10, 10, 10, 0"/>
+		<Setter Property="Margin" Value="10, 10, 10, 5"/>
 	</Style>
+
+	<!-- Data Templates -->
 
 	<DataTemplate x:Key="portTemplate"
 				  x:DataType="m:DataItem">
@@ -87,7 +90,7 @@
 				  RowDefinitions="50, 50"
 				  ColumnSpacing="10"
 				  RowSpacing="5"
-				  HorizontalOptions="Fill">
+				  VerticalOptions="Center">
 
 				<ffsvg:SvgCachedImage Grid.Row="0" Grid.Column="0"
 									  Source="{Binding FirstImage, Mode=OneTime}"
