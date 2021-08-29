@@ -14,7 +14,7 @@ Demonstrates changing a Xamarin Forms CollectionView from a vertical list to a h
 
 ## Notes
 
-Xamarin.Essentials [DeviceDisplay](https://docs.microsoft.com/en-us/xamarin/essentials/device-display?tabs=android) is unreliable, returning the previous orientation when using the `MainDisplayInfoChanged` event. See xamarin/Essentials#1355
+Xamarin.Essentials [DeviceDisplay](https://docs.microsoft.com/en-us/xamarin/essentials/device-display?tabs=android) is unreliable, returning the previous orientation when using the `MainDisplayInfoChanged` event. See [xamarin/Essentials#1355](https://github.com/xamarin/Essentials/issues/1355).
 
 Using the page's `OnSizeAllocated` event is more reliable. Override the `OnSizeAllocated` event to call a view-model method which updates the layout; usually using a base page and base view-model.
 
@@ -30,6 +30,6 @@ Portrait | Landscape
 
 &nbsp;
 
-&nbsp;
-
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/).
+
+Colours by [Nord](https://www.nordtheme.com/).
