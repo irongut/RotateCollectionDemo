@@ -1,5 +1,4 @@
 # ![RotateCollectionDemo](zombie_round_48.png) Rotate Collection Demo
-Demonstrates changing a CollectionView based on device orientation.
 
 <div align="center">
   
@@ -10,6 +9,28 @@ Demonstrates changing a CollectionView based on device orientation.
 [![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
 
 </div>
+
+Demonstrates changing a CollectionView based on device orientation in Xamarin Forms.
+
+## Notes
+
+Xamarin.Essentials [DeviceDisplay](https://docs.microsoft.com/en-us/xamarin/essentials/device-display?tabs=android) is unreliable, returning the previous orientation when using the `MainDisplayInfoChanged` event. See xamarin/Essentials#1355
+
+Using the page's `OnSizeAllocated` event is more reliable. Override the `OnSizeAllocated` event to call a view-model method which updates the layout; usually using a base page and base view-model.
+
+Use a binding on `CollectionView.ItemTemplate` to specify different data templates for portrait and landscape.
+
+Use a binding on `CollectionView.ItemLayout` to specify different layouts / orientation for portrait and landscape.
+
+## Screenshots
+
+Portrait
+--------
+![Portrait Screenshot](rcd_portrait.png)
+
+Landscape
+---------
+![Landscape Screenshot](rcd_landscape.png)
 
 &nbsp;
 
