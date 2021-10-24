@@ -1,12 +1,12 @@
 # ![RotateCollectionDemo](zombie_round_48.png) Rotate Collection Demo
 
+<a href="https://blog.taranissoftware.com/rotating-a-list-in-xamarinforms-using-collectionview"><img src="https://hashnode-blog-cards.souravdey777.vercel.app/api/getHashnodeBlog?url=https://blog.taranissoftware.com/rotating-a-list-in-xamarinforms-using-collectionview&large=true&theme=dark" align="right" alt="Rotating a list in Xamarin.Forms using CollectionView"/></a>
+
 <div align="center">
-  
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
 &nbsp;
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
-&nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
 
 </div>
 
