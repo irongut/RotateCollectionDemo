@@ -10,7 +10,7 @@
 
 </div>
 
-Demonstrates changing a Xamarin Forms CollectionView from a vertical list to a horizontal list based on device orientation.
+Demonstrates changing a Xamarin Forms CollectionView from a vertical list to a horizontal list based on device orientation. This code accompanies my blog post [Rotating a list in Xamarin.Forms using CollectionView](https://blog.taranissoftware.com/rotating-a-list-in-xamarinforms-using-collectionview).
 
 ## Notes
 
