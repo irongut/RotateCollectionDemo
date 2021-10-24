@@ -43,7 +43,7 @@
                      Spacing="10"
                      BackgroundColor="{StaticResource brandColor}">
             
-            <Label Text="{Binding LastUpdated, StringFormat='Updated: {0}', Mode=OneWay}" 
+            <Label Text="{Binding LastUpdated, StringFormat='Updated: {0}', Mode=OneWay}"
                    Style="{StaticResource rightBannerStyle}"/>
             
         </StackLayout>
